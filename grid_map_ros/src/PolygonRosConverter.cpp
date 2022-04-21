@@ -44,7 +44,7 @@ void PolygonRosConverter::toLineMarker(
   rclcpp::Time time_stamp(polygon.getTimestamp());
   marker.header.stamp = time_stamp;
   marker.header.frame_id = polygon.getFrameId();
-  marker.lifetime = rclcpp::Duration(0.0);
+  marker.lifetime = rclcpp::Duration::from_nanoseconds(0);
   marker.action = visualization_msgs::msg::Marker::ADD;
   marker.type = visualization_msgs::msg::Marker::LINE_STRIP;
   marker.color = color;
@@ -74,7 +74,7 @@ void PolygonRosConverter::toTriangleListMarker(
   rclcpp::Time time_stamp(polygon.getTimestamp());
   marker.header.stamp = time_stamp;
   marker.header.frame_id = polygon.getFrameId();
-  marker.lifetime = rclcpp::Duration(0.0);
+  marker.lifetime = rclcpp::Duration::from_nanoseconds(0);
   marker.action = visualization_msgs::msg::Marker::ADD;
   marker.type = visualization_msgs::msg::Marker::TRIANGLE_LIST;
   marker.scale.x = 1.0;
