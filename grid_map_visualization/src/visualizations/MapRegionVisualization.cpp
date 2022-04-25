@@ -39,7 +39,7 @@ bool MapRegionVisualization::readParameters()
     RCLCPP_INFO(
       nodePtr_->get_logger(),
       "MapRegionVisualization with name '%s' did not find a 'line_width' parameter. Using default.",
-      name_);
+      name_.c_str());
     return false;
   }
 
@@ -48,7 +48,7 @@ bool MapRegionVisualization::readParameters()
     RCLCPP_INFO(
       nodePtr_->get_logger(),
       "MapRegionVisualization with name '%s' did not find a 'color' parameter. Using default.",
-      name_);
+      name_.c_str());
   }
   setColorFromColorValue(color_, colorValue, true);
 
@@ -58,7 +58,7 @@ bool MapRegionVisualization::readParameters()
 bool MapRegionVisualization::initialize()
 {
   marker_.ns = "map_region";
-  marker_.lifetime = rclcpp::Duration(0);  // Setting lifetime to forever
+  marker_.lifetime = rclcpp::Duration::from_nanoseconds(0);;  // Setting lifetime to forever
   marker_.action = visualization_msgs::msg::Marker::ADD;
   marker_.type = visualization_msgs::msg::Marker::LINE_STRIP;
   marker_.scale.x = lineWidth_;

@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
 project(grid_map_costmap_2d)
 
+if(NOT CMAKE_CXX_STANDARD)
+  set(CMAKE_CXX_STANDARD 17)
+  set(CMAKE_CXX_STANDARD_REQUIRED ON)
+endif()
+set(BUILD_TESTING OFF)
+
 ## Find ament_cmake macros and libraries
 find_package(ament_cmake REQUIRED)
 find_package(grid_map_cmake_helpers REQUIRED)

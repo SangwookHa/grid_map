@@ -80,8 +80,7 @@ bool GridMapVisualization::readParameters()
         visualizationsParameter_.c_str(), name.c_str());
       return false;
     }
-
-    nodePtr->declare_parameter(name + ".type");
+    nodePtr->declare_parameter<std::string>(name + ".type");
     try {
       if (!nodePtr->get_parameter(name + ".type", type)) {
         RCLCPP_ERROR(
