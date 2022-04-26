@@ -125,7 +125,8 @@ void saveGridMap(
   RCLCPP_INFO_STREAM(
     node->get_logger(), "Saving grid map successful: " << std::boolalpha << savingSuccessful);
 }
-
+//! inline function should be defined at the header
+/*
 inline void printTimeElapsedToRosInfoStream(
   const std::chrono::system_clock::time_point & start,
   const std::string & prefix,
@@ -136,6 +137,7 @@ inline void printTimeElapsedToRosInfoStream(
     std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count() / 1000.0;
   RCLCPP_INFO_STREAM(node_logger, prefix << duration << " sec");
 }
+*/
 
 void processPointcloud(
   grid_map::GridMapPclLoader * gridMapPclLoader,

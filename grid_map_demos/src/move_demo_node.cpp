@@ -38,7 +38,7 @@ int main(int argc, char ** argv)
     grid_map::GridMap tempMap(map);
     rclcpp::Rate rate(10.0);
     rclcpp::Time startTime = node->now();
-    rclcpp::Duration duration(0.0);
+    rclcpp::Duration duration = rclcpp::Duration::from_nanoseconds(0);
 
     while (duration <= rclcpp::Duration::from_seconds(10.0)) {
       rclcpp::Time time = node->now();
